@@ -1,0 +1,36 @@
+// String Anagram
+// 'tahoor'->'oortha'
+
+// condition
+// 1.Both array length must be same 
+// 2.Both letter are same  but arrangment can be different
+
+// in string there
+// {t:1,a:1,h:1,o:2,r:1}
+
+let first='tahoor'
+let second='ohoatr'
+function Anagram(string1, string2) {
+  if (string1.length !== string2.length) {
+    return false
+  }
+  let counter ={}
+  for (let a of string1) {
+    counter[a] = (counter[a] || 0) + 1
+    
+  }
+  console.log(counter)
+
+  for(let b of string2){
+    if(!counter[b]){
+      return false
+      
+    }
+    counter[b]-=1
+  }
+  return true
+}
+let chek=Anagram(first,second)
+console.log(chek)
+
+//linear time complexity o(n)
