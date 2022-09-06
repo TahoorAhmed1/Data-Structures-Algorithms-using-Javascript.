@@ -1,5 +1,7 @@
 
-let array = [-5, -4, -3, -2, 0, 1, 2, 3, 5, 6, 8]
+
+
+let array = [-5, -4, -3, -2, 0, 1 , 3, 6, 7, 8]
 // array must be sorted
 
 function newSum(array) {
@@ -21,7 +23,8 @@ function newSum(array) {
     }
   }
 }
+
 let a = newSum(array)
 console.log(a)
 
-o(n) linear time complexity
+// o(n) linear time complexity
