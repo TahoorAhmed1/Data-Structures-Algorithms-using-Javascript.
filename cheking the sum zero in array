@@ -1,0 +1,27 @@
+
+let array = [-5, -4, -3, -2, 0, 1, 2, 3, 5, 6, 8]
+// array must be sorted
+
+function newSum(array) {
+  // the left index is start with zero . index=0 ,value=-5
+  let left = 0
+  // the right index is ? so
+  let right = array.length - 1;
+
+  while (left < right) {
+
+    sum = array[left] + array[right]
+    if (sum === 0) {
+      return [array[left], array[right]];
+
+    } else if (sum > 0) {
+      right--
+    } else {
+      left++
+    }
+  }
+}
+let a = newSum(array)
+console.log(a)
+
+o(n) linear time complexity
