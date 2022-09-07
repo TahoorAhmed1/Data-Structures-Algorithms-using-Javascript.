@@ -1,2 +1,20 @@
-# Data-Structures-Algorithms-using-Javascript.
-We are checking that if sum of any first value is zero than we return those value 
+// finding user detail in array
+
+const nameOf=[{
+  userName:"Tahoor",email:"ahmedtahoor5@gmail.com",pasword:"fuckyou13+3"
+},{
+  userName:"ali", email:"alitari5@gmail.com"
+},{
+  userName:"sbaih", email:"sabihahmed@gmail.com"
+}]
+
+function linear(array,name){
+  for(let iteam of array){
+   if(iteam['userName'] === name){
+     return iteam
+   }
+  }
+  return false
+}
+const result=linear(nameOf,"ali")
+console.log(result)
