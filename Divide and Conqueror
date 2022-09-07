@@ -1,0 +1,41 @@
+// DIVIDE AND CONQUERROR
+// FIND THE INDEX OF SORTED ARRAY IN VALUE 7
+// [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+// condition
+// min=0 is index, element=1
+// max=array.length-1
+
+// let mid= (min+max)/2 => 14/2 == 7. we will find the mid 
+
+// 1.only mid show index
+// 2.but if we do array[mid] then it show element
+
+//(array[mid]<7)
+// min=mid+1
+
+// (array[mid]>7) 
+// max=mid-1
+
+// (min+max)/2 => 3 min 3 max 6
+// array[mid]+1 => min =4 max =6
+// (min+max)/2 => min=5 max=6
+// array[mid]+1=> min=6  max=6
+function midIndex(array, num) {
+  let min = 0
+  let max = array.length - 1
+  while (min <= max) {
+    let mid = Math.floor((min + max) / 2);
+    if (array[mid] < num) {// here we target on element
+      min = mid + 1; // here we target on index
+    } else if (array[mid] > num) {
+      max = mid - 1
+    } else {
+      return [mid,array[mid]]
+    }
+
+  }
+  // return -1
+}
+
+let result = midIndex([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 7)
+console.log(result)
