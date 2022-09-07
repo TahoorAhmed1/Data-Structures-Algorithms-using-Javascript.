@@ -1,0 +1,38 @@
+
+// chek squre is present in another array ya not
+// arr1=[1,2,3,4,5] , arr2=[1,4,9,16,25]
+// conditon
+// 1. array[i]*array[i]===array2[j]
+// if squre=true
+
+
+function squre(array1,array2){
+  let map1={};
+  let map2={}
+
+  for(let item of array1){
+    map1[item]=(map1[item] || 0)+1
+  }
+  console.log(map1)
+  
+  for(let item1 of array2){
+    map2[item1]=(map2[item1] || 0)+1
+  }
+    console.log(map2)  
+  // then we find keys of map 1 and chek that the key squre is present in map2
+  for(let key in map1){
+    console.log(key)
+    if(!map2[key*key]){
+      
+      return false
+    }if(map1[key] !== map2[key*key]){ // compairing value
+
+      return false
+    }
+      
+  }
+  return true
+}
+let result=squre([1,2,2,3],[1,4,4,9])
+console.log(result)
+// time complexity o(n)
