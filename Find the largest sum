@@ -1,0 +1,27 @@
+// [1,2,3,4,5,6,7,8]
+// find largest sum of consicutive sum
+// num=4+
+// outout=36
+// Condition
+// 1. num>array.length->error
+// formula 
+// 1. 8 - num +1 loop run time
+
+function sum(array, num) {
+  if (num > array) {
+    throw new Error('NUM MUST BE SMALLER')
+  } else {
+    let max = 0
+    for (let i = 0; i < array.length - num + 1; i++) {
+      let min = 0
+      for (let j = 0; j < num; j++) {
+        min+=array[i+j]
+      } if (min > max) {
+        max = min
+      }
+    }
+      return max
+  }
+}
+let a = sum([1,2,3,4,3, 5,4, 6, 7,8],4)
+console.log(a)
