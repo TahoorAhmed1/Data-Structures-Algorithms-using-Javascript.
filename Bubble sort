@@ -1,0 +1,23 @@
+// Bubble Sort
+// a sorting algorithem in which the largest value is to buubble up to the top
+
+function bubbleSort(array) {
+  for(let i=array.length;i>0;i--){
+    let stop;
+    console.log(i)
+    for(let j=0;j<i-1;j++){
+      if(array[j]>array[j+1]){
+        [array[j],array[j+1]]=[array[j+1],array[j]]
+        stop=true
+      }  
+      
+    }if(!stop){
+      break
+    }
+
+  }
+        return array
+  
+}
+const result=bubbleSort([8,1,2,3,4,5])
+console.log(result)
